@@ -1,28 +1,53 @@
 {
     "categories": [
         {
-            "id": 1,
+            "id": "category-1",
             "name": "gitaar",
             "parent_category": null
         },
         {
-            "id": 2,
+            "id": "category-2",
             "name": "techniek",
-            "parent_category": 1
+            "parent_category": "category-1"
+        },
+	{
+	    "id": "category-3",
+	    "name": "picking",
+	    "parent_category": "category-2"
+	},
+        {
+            "id": "category-4",
+            "name": "sport",
+            "parent_category": null
+        },
+        {
+            "id": "category-5",
+            "name": "gehoortraining",
+            "parent_category": "category-1"
         }
     ],
     "activities": [
         {
-            "id": 1,
+            "id": "activity-1",
             "description": "2-finger trills",
-            "parent_category": 2
+            "parent_category": "category-2"
         },
         {
-            "id": 2,
+            "id": "activity-2",
             "description": "zuiver down picking",
-            "parent_category": 2,
+            "parent_category": "category-2",
             "metric": "BPM",
             "minimum_minutes": 2
+        },
+        {
+            "id": "activity-3",
+            "description": "boulderen",
+            "parent_category": "category-4"
+        },
+        {
+            "id": "activity-4",
+            "description": "mineur-majeur akkoorden",
+            "parent_category": "category-5"
         }
     ],
     "entries": [
@@ -54,6 +79,13 @@
             "minutes_in_interval": 2,
             "activities_id": 2,
             "start_date": "2022-03-04"
+        },
+        {
+            "id": 3,
+            "interval_days": 1,
+            "minutes_in_interval": 5,
+            "activities_id": 4,
+            "start_date": "2022-03-06"
         }
     ],
     "comments": [
@@ -62,5 +94,25 @@
             "entries_id": 2,
             "contents": "Ging goed vandaag!"
         }
-    ]
+    ],
+    "todo_today": {
+        "required": [
+            {
+                "activities_id": 1,
+                "required": 2
+            },
+            {
+                "activities_id": 2,
+                "required": 2
+            },
+            {
+                "categories_id": 2,
+                "required": 20
+            },
+            {
+                "activities_id": 4,
+                "required": 10
+            }
+        ]
+    }
 }
